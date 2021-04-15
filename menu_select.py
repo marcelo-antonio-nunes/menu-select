@@ -1,3 +1,10 @@
+'''
+    CLASSE QUE IMPLEMRNTA UM MENU COM QUANTOS ITEMS QUISER 
+    DATA - 15/04/2021
+    AUTOR - MARCELO ANTONIO NUNES DA SILVA
+    EMAIL -   marcelo197519@gmail.com
+    WHASTSAPP - (11)977634435 
+'''
 import keyboard
 import winsound 
 import os
@@ -34,26 +41,26 @@ class MenuSelect():
                 print('{:>10}'.format(self.__l1[i]))
                 self.__index = self.__index
                 
-    @property
+    
     def index(self): # retorna index atual ex -> index = menu.index()
-        return int(self.__index)
+        return MenuSelect.index_aux
 
 
     def down(self):
         os.system('cls')
-        self.listar_menus()
         if self.__index != 0:
             self.__index -=1
             MenuSelect.index_aux = self.__index
+        self.listar_menus()
         self.beep()
 
 
     def up(self):
         os.system('cls')
-        self.listar_menus()
         if self.__index != len(self.__l1)-1:
             self.__index +=1
             MenuSelect.index_aux = self.__index
+        self.listar_menus()
         self.beep()
 
 
